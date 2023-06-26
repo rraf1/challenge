@@ -1,0 +1,2 @@
+ALTER TABLE item_loc_soh MODIFY
+  PARTITION BY HASH(loc);
