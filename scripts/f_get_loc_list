@@ -1,4 +1,4 @@
-CREATE OR REPLACE TYPE t_row_loc AS loc%ROWTYPE;
+CREATE OR REPLACE TYPE t_row_loc AS OBJECT (loc number(10), loc_desc varchar2(25));
 /
 CREATE OR REPLACE TYPE t_tbl_loc AS TABLE OF t_row_loc;
 /
