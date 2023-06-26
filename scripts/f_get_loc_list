@@ -1,0 +1,15 @@
+CREATE OR REPLACE TYPE t_row_loc AS loc%ROWTYPE;
+/
+CREATE OR REPLACE TYPE t_tbl_loc AS TABLE OF t_row_loc;
+/
+--
+CREATE OR REPLACE FUNCTION f_get_loc_list 
+  RETURN t_tbl_loc PIPELINED AS
+BEGIN
+  FOR I IN (SELECT * FROM LOC) LOOP 
+    PIPE ROW (t_row_loc(i.loc, i.loc_desc));
+  END LOOP;
+  --
+  RETURN;
+END;
+/
