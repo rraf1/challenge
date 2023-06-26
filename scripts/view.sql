@@ -1,5 +1,5 @@
 --I can't understand what's meant by required fields since it was not mentioned previously so I'll just create a view that makes sense:
-CREATE VIEW v_item_loc_soh (
+CREATE VIEW v_item_loc_soh as (
     SELECT i.item,
            i.item_desc,
            i.dept,
